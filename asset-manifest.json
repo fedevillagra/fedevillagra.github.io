@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/fedevillagra.github.io/static/css/main.3c44aa1e.css",
+    "main.js": "/fedevillagra.github.io/static/js/main.1a68ca7e.js",
+    "static/js/787.fcfbcd5f.chunk.js": "/fedevillagra.github.io/static/js/787.fcfbcd5f.chunk.js",
+    "index.html": "/fedevillagra.github.io/index.html",
+    "main.3c44aa1e.css.map": "/fedevillagra.github.io/static/css/main.3c44aa1e.css.map",
+    "main.1a68ca7e.js.map": "/fedevillagra.github.io/static/js/main.1a68ca7e.js.map",
+    "787.fcfbcd5f.chunk.js.map": "/fedevillagra.github.io/static/js/787.fcfbcd5f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3c44aa1e.css",
+    "static/js/main.1a68ca7e.js"
+  ]
+}
