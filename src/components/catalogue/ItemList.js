@@ -14,22 +14,17 @@ const ItemList = () => {
     }) } , [categoryId])
 
     
-    const getProducts = /*async*/ () => {
-        /*const URL = 'datos.json'
-        const resp = await fetch(URL)
-        const data = await resp.json()
-        setItem(data)
-        console.log(data)*/
+    const getProducts = () => {
         if(categoryId!=undefined){
           const filtrado = PRODUCTS.filter((element) => element.tipo.includes(categoryId))
           return new Promise((resolve,reject)=>{
             resolve(filtrado)
           }).catch((err)=>console.log(err))
         }
+
         return new Promise((resolve,reject)=>{
               resolve(PRODUCTS)
       }).catch((err)=>console.log(err))
-        
     }
 
   return (

@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom'
 const Item = ({id,name,price,image}) => {
+  {/* CARD */}
   return (
           <Link to={`/item/${id}`}>
           <div key={id} className="group relative">
