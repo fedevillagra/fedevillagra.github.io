@@ -1,6 +1,7 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Link } from "react-router-dom"
 
 const navigation = {
   categories: [
@@ -281,7 +282,7 @@ const NavBar = ({children}) => {
   
           <nav aria-label="Top" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="border-b border-gray-200">
-              <div className="flex h-16 items-center">
+              <div className="flex h-20 items-center">
                 <button
                   type="button"
                   className="rounded-md bg-white p-2 text-gray-400 lg:hidden"
@@ -293,15 +294,15 @@ const NavBar = ({children}) => {
   
                 {/* Logo */}
                 <div className="ml-4 flex lg:ml-0">
-                  <a href="#">
+                  <Link to="/">
                     <span className="sr-only">Your Company</span>
                     <img
-                      className="h-8 w-auto"
-                      src="https://tailwindui.com/img/logos/mark.svg?color=blue&shade=400"
+                      className="h-20 w-auto"
+                      src="https://res.cloudinary.com/df7udj4nr/image/upload/v1670818593/myIMG/LOGO2_bxtken.png"
                       alt=""
                     />
 
-                  </a>
+                  </Link>
                 </div>
   
                 {/* Flyout menus */}
@@ -320,7 +321,7 @@ const NavBar = ({children}) => {
                                   'relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out'
                                 )}
                               >
-                                {category.name}
+                                {category.name} {/*women men*/} 
                               </Popover.Button>
                             </div>
   
@@ -399,7 +400,7 @@ const NavBar = ({children}) => {
                         href={page.href}
                         className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
                       >
-                        {page.name}
+                        {page.name} {/*company stores*/}
                       </a>
                     ))}
                   </div>
@@ -419,11 +420,11 @@ const NavBar = ({children}) => {
                   <div className="hidden lg:ml-8 lg:flex">
                     <a href="#" className="flex items-center text-gray-700 hover:text-gray-800">
                       <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg"
+                        src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
                         alt=""
                         className="block h-auto w-5 flex-shrink-0"
                       />
-                      <span className="ml-3 block text-sm font-medium">ARG</span>
+                      <span className="ml-3 block text-sm font-medium">USD</span>
                       <span className="sr-only">, change currency</span>
                     </a>
                   </div>
