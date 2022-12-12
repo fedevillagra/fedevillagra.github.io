@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom'
-const Item = ({id,name,price,description,image,stock}) => {
+const Item = ({id,name,price,image}) => {
   return (
-          <Link to={`/products/${id}`}>
+          <Link to={`/item/${id}`}>
           <div key={id} className="group relative">
             <div className="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
               <img

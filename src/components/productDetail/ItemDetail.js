@@ -2,7 +2,8 @@ import { Fragment, useState } from 'react'
 import { Dialog, RadioGroup, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { StarIcon } from '@heroicons/react/20/solid'
-import { Link } from "react-router-dom"
+import Counter from './Counter';
+import {useNavigate} from 'react-router-dom'
 
 const product = {
   rating: 3.9,
@@ -21,6 +22,7 @@ function classNames(...classes) {
 const ItemDetail = ({name, price, image, description, stock}) => {
   const [open, setOpen] = useState(true)
   const [selectedColor, setSelectedColor] = useState(product.colors[0])
+  const navigate = useNavigate()
 
   return (
     <Transition.Root show={true} as={Fragment}>
@@ -50,13 +52,13 @@ const ItemDetail = ({name, price, image, description, stock}) => {
             >
               <Dialog.Panel className="flex w-full transform text-left text-base transition md:my-8 md:max-w-2xl md:px-4 lg:max-w-4xl">
                 <div className="relative flex w-full items-center overflow-hidden bg-white px-4 pt-14 pb-8 shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8">
-                  <Link to="/"
+                  <button onClick={()=>navigate(-1)}
                     type="button"
                     className="absolute top-4 right-4 text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8"
                   >
                     <span className="sr-only">Close</span>
                     <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                  </Link>
+                  </button>
 
                   <div className="grid w-full grid-cols-1 items-start gap-y-8 gap-x-6 sm:grid-cols-12 lg:gap-x-8">
                     <div className="aspect-w-2 aspect-h-3 overflow-hidden rounded-lg bg-gray-100 sm:col-span-4 lg:col-span-5">
@@ -104,7 +106,7 @@ const ItemDetail = ({name, price, image, description, stock}) => {
                         <form>
                           {/* Colors */}
                           <div>
-                            <h4 className="text-sm font-medium text-gray-900">Color</h4>
+                            <h4 className="text-lg font-medium text-gray-900">Color</h4>
 
                             <RadioGroup value={selectedColor} onChange={setSelectedColor} className="mt-4">
                               <RadioGroup.Label className="sr-only"> Choose a color </RadioGroup.Label>
@@ -139,14 +141,14 @@ const ItemDetail = ({name, price, image, description, stock}) => {
                             </RadioGroup>
                           </div>
 
-                          {/* Sizes */}
-                          <div className="mt-10">
+                          {/* Description */}
+                          <div className="mt-10 mb-5">
                           <h1 className="text-lg mb-3 font-medium text-gray-900">Descripción</h1>
                             <div className="flex items-center justify-between">
                                 <h4 className="text-sm font-medium text-gray-900">{description}</h4>
                             </div>
                         </div>
-
+                        <Counter stock={stock}></Counter>
                           <button
                             type="submit"
                             className="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"

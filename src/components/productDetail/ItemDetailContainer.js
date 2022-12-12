@@ -3,17 +3,17 @@ import PRODUCTS from "../../data"
 import ItemDetail from "./ItemDetail"
 import { useParams } from 'react-router-dom';
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = (tipo) => {
 
-    const { itemId } = useParams()
+    const { id } = useParams()
     const [itemDetail, setItemDetail] = useState([])
 
     useEffect(() => { getDetail().then((res)=>{
         setItemDetail(res)
-    }) } , [itemId])
+    }) } , [id])
     
     const getDetail = () => {
-        const item = PRODUCTS.find (p=>p.id==itemId)
+        const item = PRODUCTS.find (p=>p.id==id)
         return new Promise((resolve,reject)=>{
                 resolve(item)
         }).catch((err)=>console.log(err))
@@ -21,7 +21,7 @@ const ItemDetailContainer = () => {
 
   return (
         <div>
-          {<ItemDetail key={itemDetail.id} {...itemDetail}/>}
+          <ItemDetail key={itemDetail.id} {...itemDetail}/>
         </div>
   )
 }
