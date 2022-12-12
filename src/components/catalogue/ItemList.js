@@ -1,8 +1,8 @@
+{/* filtra categorias o mustra todos los productos del catalogo */}
 import { useEffect, useState } from "react"
 import Item from "./Item"
 import PRODUCTS from "../../data.js"
 import { useParams } from "react-router-dom"
-
 
 const ItemList = () => {
 

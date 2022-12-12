@@ -1,3 +1,4 @@
+{/* filtra el producto seleccionado */}
 import { useEffect, useState } from "react"
 import PRODUCTS from "../../data"
 import ItemDetail from "./ItemDetail"

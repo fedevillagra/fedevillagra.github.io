@@ -1,3 +1,4 @@
+{/* CATALOGO */}
 import ItemList from "./ItemList"
 
 const ItemListContainer = () => {

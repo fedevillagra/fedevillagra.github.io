@@ -1,3 +1,4 @@
+{/* barra de navegacion */}
 import { Fragment, useState } from 'react'
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -12,7 +13,7 @@ const NavBar = ({children}) => {
 
 
     const navigation = {
-      pages: [
+      categories: [
         { name: 'NUEVO'},
         { name: 'Narguiles'},
         { name: 'Equipo'},
@@ -125,10 +126,10 @@ const NavBar = ({children}) => {
                   </Tab.Group>
   
                   <div className="space-y-6 border-t border-gray-200 py-6 px-4">
-                    {navigation.pages.map((page) => (
-                      <div key={page.name} className="flow-root">
-                        <a href={page.href} className="-m-2 block p-2 font-medium text-gray-900">
-                          {page.name}
+                    {navigation.categories.map((category) => (
+                      <div key={category.name} className="flow-root">
+                        <a href={category.href} className="-m-2 block p-2 font-medium text-gray-900">
+                          {category.name}
                         </a>
                       </div>
                     ))}
@@ -199,10 +200,10 @@ const NavBar = ({children}) => {
                 
                   <div className="flex h-full space-x-8">
                   
-                    {navigation.pages.map((page) => (
-                      <div key={page.name} className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">   
-                      <Link to={`/category/${page.name}`}>
-                          {page.name} {/*catergories*/}
+                    {navigation.categories.map((category) => (
+                      <div key={category.name} className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">   
+                      <Link to={`/category/${category.name}`}>
+                          {category.name} {/*catergories*/}
                       </Link>
                       </div>
                     ))}

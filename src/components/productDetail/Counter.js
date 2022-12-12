@@ -1,5 +1,6 @@
+{/* Cantidad */}
 import { useState } from "react"
-{/* El Contador */}
+
 const Counter = ({stock}) => {
 
     const [count, setCount] = useState(1)
