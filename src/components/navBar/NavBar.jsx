@@ -81,48 +81,6 @@ const NavBar = ({children}) => {
                         ))}
                       </Tab.List>
                     </div>
-                    <Tab.Panels as={Fragment}>
-                      {navigation.categories.map((category) => (
-                        <Tab.Panel key={category.name} className="space-y-10 px-4 pt-10 pb-8">
-                          <div className="grid grid-cols-2 gap-x-4">
-                            {category.featured.map((item) => (
-                              <div key={item.name} className="group relative text-sm">
-                                <div className="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                                  <img src={item.imageSrc} alt={item.imageAlt} className="object-cover object-center" />
-                                </div>
-                                <a href={item.href} className="mt-6 block font-medium text-gray-900">
-                                  <span className="absolute inset-0 z-10" aria-hidden="true" />
-                                  {item.name}
-                                </a>
-                                <p aria-hidden="true" className="mt-1">
-                                  Shop now
-                                </p>
-                              </div>
-                            ))}
-                          </div>
-                          {category.sections.map((section) => (
-                            <div key={section.name}>
-                              <p id={`${category.id}-${section.id}-heading-mobile`} className="font-medium text-gray-900">
-                                {section.name}
-                              </p>
-                              <ul
-                                role="list"
-                                aria-labelledby={`${category.id}-${section.id}-heading-mobile`}
-                                className="mt-6 flex flex-col space-y-6"
-                              >
-                                {section.items.map((item) => (
-                                  <li key={item.name} className="flow-root">
-                                    <a href={item.href} className="-m-2 block p-2 text-gray-500">
-                                      {item.name}
-                                    </a>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          ))}
-                        </Tab.Panel>
-                      ))}
-                    </Tab.Panels>
                   </Tab.Group>
   
                   <div className="space-y-6 border-t border-gray-200 py-6 px-4">

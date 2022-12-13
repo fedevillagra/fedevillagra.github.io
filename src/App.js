@@ -5,7 +5,6 @@ import CartWidget from './components/navBar/CartWidget';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 import ItemDetailContainer from './components/productDetail/ItemDetailContainer';
-import ItemDetail from './components/productDetail/ItemDetail';
 
 function App() {
   return (
